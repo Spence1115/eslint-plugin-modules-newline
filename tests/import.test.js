@@ -23,8 +23,38 @@ ruleTester.run("import-declaration-newline", rule, {
     "import React, { useState } from 'react';",
     "import React, {\nuseState } from 'react';",
     "import React, {\nuseState, \nuseEffect } from 'react'",
+    {
+      code: "import React, { useState, useEffect } from 'react'",
+      options: [{ nodeSpecifersLength: 3 }],
+    },
+    {
+      code: "import React, {\nuseState,\nuseEffect,\nuseContext } from 'react'",
+      options: [{ nodeSpecifersLength: 3 }],
+    },
   ],
   invalid: [
+    {
+      code: "import React, { useState, useEffect, useContext } from 'react'",
+      output: "import React, {\n useState,\nuseEffect,\nuseContext } from 'react'",
+      options: [{ nodeSpecifersLength: 3 }],
+      errors: [
+        {
+          type: "ImportDeclaration",
+          line: 1,
+          column: 1,
+        },
+        {
+          type: "ImportDeclaration",
+          line: 1,
+          column: 1,
+        },
+        {
+          type: "ImportDeclaration",
+          line: 1,
+          column: 1,
+        },
+      ],
+    },
     {
       code: "import {\nk1, k2\n} from 'something';",
       output: "import {\nk1,\nk2\n} from 'something';",
