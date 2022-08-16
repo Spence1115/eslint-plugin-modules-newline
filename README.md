@@ -1,4 +1,4 @@
-# eslint-plugin-modules-newline
+# eslint-plugin-modules-newlines
 
 Eslint plugin to enforce placing import and export variables on separate lines
 
