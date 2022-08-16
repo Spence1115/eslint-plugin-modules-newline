@@ -1,4 +1,4 @@
-# eslint-plugin-modules-newline
+# eslint-plugin-modules-newlines
 
 Eslint plugin to enforce placing import and export variables on separate lines
 
@@ -14,26 +14,26 @@ or
 $ yarn add eslint --dev
 ```
 
-Next, install `eslint-plugin-modules-newline`:
+Next, install `@spence1115/eslint-plugin-modules-newlines`:
 
 ```
-$ npm install eslint-plugin-modules-newline --save-dev
+$ npm install @spence1115/eslint-plugin-modules-newlines --save-dev
 ```
 or
 ```
-$ yarn add eslint-plugin-modules-newline --dev
+$ yarn add @spence1115/eslint-plugin-modules-newlines --dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-modules-newline` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `@spence1115/eslint-plugin-modules-newlines` globally.
 
 ## Usage
 
-Add `eslint-plugin-modules-newline` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `"@spence1115/modules-newlines"` to the plugins section of your `.eslintrc` configuration file
 
 ```json
 {
     "plugins": [
-        "modules-newline"
+        "@spence1115/modules-newlines"
     ]
 }
 ```
@@ -44,8 +44,10 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "modules-newline/import-declaration-newline": "warn",
-        "modules-newline/export-declaration-newline": "warn"
+        "@spence1115/modules-newlines/import-declaration-newline": ["error/warn", {
+            "nodeSpecifersLength": 3 // optional, allows more import/exports on a single line before forcing a line break
+        }],
+        "@spence1115/modules-newline/export-declaration-newline": "error/warn"
     }
 }
 ```
