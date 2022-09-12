@@ -56,3 +56,7 @@ Then configure the rules you want to use under the rules section.
 
 * Enforce placing import variables on separate lines (import-declaration-newline)
 * Enforce placing export variables on separate lines (export-declaration-newline)
+
+## Links
+https://www.npmjs.com/package/@spence1115/eslint-plugin-modules-newlines
+
